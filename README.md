@@ -1,0 +1,2 @@
+# Linux-Lokaverkefni
+Linux Lokaverkefni
