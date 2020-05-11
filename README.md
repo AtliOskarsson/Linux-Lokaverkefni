@@ -38,3 +38,18 @@ https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/etc/bind/zones/d
 
 ![alt text](https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/Photos/usersLogin.PNG)
 
+Each user has a home directory <br/>
+![alt text](https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/Photos/userDirectory.PNG)
+
+## Samba share
+
+samba configurations file <br/>
+https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/etc/samba/smb.conf
+
+## ssh protocol
+apt-get install openssh-server
+apt-get install openssh-client
+systemctl status ssh
+
+Only added AllowGroups sameign so only the users in the group sameign can use ssh
+https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/etc/ssh/sshd_config
