@@ -108,7 +108,7 @@ https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/etc/fstab
 
 ## squirrelmail
 
-I was able to get the squirrelMail up but did no have time to get users to work
+I was able to get the squirrelMail up but did not have time to get users to work
 
 ![alt text](https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/Photos/squirrelmail.PNG)
 
