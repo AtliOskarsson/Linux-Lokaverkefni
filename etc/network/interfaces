@@ -3,8 +3,6 @@
 
 source /etc/network/interfaces.d/*
 
-
-
 # The loopback network interface
 auto lo
 iface lo inet loopback
@@ -13,8 +11,6 @@ auto ens33
 iface ens33 inet dhcp
 
 # The primarty network interface
-#auto ens37
-
 allow-hotplug ens37
 iface ens37 inet static
 	address 192.168.100.1/26
