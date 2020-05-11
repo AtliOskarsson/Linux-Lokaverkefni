@@ -51,5 +51,66 @@ apt-get install openssh-server
 apt-get install openssh-client
 systemctl status ssh
 
-Only added AllowGroups sameign so only the users in the group sameign can use ssh
+Only added AllowGroups sameign so only the users in the group sameign can use ssh <br/>
 https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/etc/ssh/sshd_config
+
+![alt text](https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/Photos/ssh.PNG)
+
+## Apache2 with SSL Certification
+
+I used the command below to create a key for the ssl certification
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
+
+Added line 17 to <br/>
+https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/etc/bind/zones/db.atli.local
+
+
+https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/etc/apache2/conf-available/ssl-params.conf <br/>
+https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/etc/apache2/sites-available/000-default.conf <br/>
+https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/etc/apache2/sites-available/default-ssl.conf <br/>
+
+![alt text](https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/Photos/siteSsl.PNG)
+
+## MySQL and phpmyadmin
+
+apt install apache2 php php-json php-mbstring php-zip php-gd php-xml php-curl php-mysql <br/>
+wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.zip <br/>
+unzip phpMyAdmin-4.9.0.1-all-languages.zip -d /opt <br/>
+mv -v /opt/phpMyAdmin-4.9.0.1-all-languages /opt/phpMyAdmin <br/>
+chown -Rfv www-data:www-data /opt/phpMyAdmin <br/>
+
+
+![alt text](https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/Photos/mysql.PNG)
+
+![alt text](https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/Photos/phpmyadmin.PNG)
+
+
+## PurFTPd
+apt install pure-ftpd
+echo "yes" > /etc/pure-ftpd/conf/Daemonize <br/>
+echo "yes" > /etc/pure-ftpd/conf/NoAnonymous <br/>
+echo "yes" > /etc/pure-ftpd/conf/ChrootEveryone <br/>
+echo "yes" > /etc/pure-ftpd/conf/IPV4Only <br/>
+systemctl restart pure-ftpd <br/>
+apt install gftp # to test ftp out <br/>
+
+![alt text](https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/Photos/ftp.PNG)
+
+## Quota 
+apt install quota
+quotacheck -ugm / # Creates files /aquota.user and /aquota.group (contain info about the limits)
+quotaon -v / # turn on the quota system
+
+Added usrquota,grpquota to line 9
+https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/etc/fstab
+
+![alt text](https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/Photos/quota.PNG)
+
+## squirrelmail
+
+I was able to get the squirrelMail up but did no have time to get users to work
+
+![alt text](https://github.com/AtliOskarsson/Linux-Lokaverkefni/blob/master/Photos/squirrelmail.PNG)
+
+
+
